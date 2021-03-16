@@ -23,6 +23,9 @@ _Explain to potential users how to run/replicate your workflow. Touch upon, if n
 
 _Point interested users to any related literature and/or documentation._
 
+__References__
+Jonathan Grix, Paul Michael Brannagan, Holly Grimes, Ross Neville. (2020). The impact of Covid-19 on sport. __International Journal of Sport Policy and Politics__, 1-12.
+
 ## About
 
 _Explain who has contributed to the repository. You can say it has been part of a class you've taken at Tilburg University._

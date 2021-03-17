@@ -1,11 +1,13 @@
-# Load merged data 
-load("./gen/data-preparation/temp/data_merged.RData")
+# Load datasets into R 
+df <- read.csv("./gen/data-preparation/input/dataset_eredivisie.csv")
 
-# Drop observations with V1 <= -0.9
-df_cleaned <- df_merged[df_merged$V1 > -0.9,]
+# Save dataframe data
+save(df,file="./gen/data-preparation/temp/dataframe_eredivisie.RData")
 
-# Remove V1
-df_cleaned <- df_cleaned[,c(1,2,4:7)]
+#clean the text
+
+
+df_cleaned <- df
 
 # Save cleaned data
 save(df_cleaned,file="./gen/data-preparation/output/data_cleaned.RData")

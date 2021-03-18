@@ -1,13 +1,6 @@
 # ------- Wordcount (Term Document Matrix creation) -------- 
 # INPUT ----
-# Load datasets into R
-df <- read.csv("./gen/data-preparation/input/dataset_eredivisie.csv")
 
-#VRAAG ME AF OF DEZE STAP LOGISCH IS! ->
-# Save dataframe data
-save(df,file="./gen/data-preparation/temp/dataframe_eredivisie.RData")
-
-# TRANSFORMATION ----
 # installing packages
 print("Installing needed packages...")
 install.packages("tm",repos = "http://cran.us.r-project.org")
@@ -15,6 +8,7 @@ install.packages('syuzhet',repos = "http://cran.us.r-project.org")
 install.packages("lubridate",repos = "http://cran.us.r-project.org")
 install.packages('scales',repos = "http://cran.us.r-project.org")
 install.packages('reshape2',repos = "http://cran.us.r-project.org")
+install.packages('here',repos = "http://cran.us.r-project.org")
 
 # loading packages
 print("Loading packages...")
@@ -25,6 +19,16 @@ library(scales)
 library(reshape2)
 library(dplyr)
 library(tm)
+library(here) #great package for dealing with relative path errors
+
+# Load datasets into R
+df <- read.csv(here("data", "dataset_eredivisie.csv"))
+
+#VRAAG ME AF OF DEZE STAP LOGISCH IS! ->
+# Save dataframe data
+save(df,file=here("gen", "data-preparation", "temp", "dataframe_eredivisie.RData"))
+
+# TRANSFORMATION ----
 
 # loading data for wordcount analysis, storing only the tweets (text) in 'sentiment' variable
 wordcount_pre <- df %>% 
@@ -80,9 +84,9 @@ tdm_post <- TermDocumentMatrix(post)
 # OUTPUT ----
 print("Saving TDM's as csv-files...")
 tdm_pre <- as.matrix(tdm_pre)
-write.csv(tdm_pre,file="././gen/data-preparation/temp/tdm_pre.csv")
+write.csv(tdm_pre,file=here("gen", "data-preparation", "temp", "tdm_pre.csv"))
 tdm_post <- as.matrix(tdm_post)
-write.csv(tdm_post,file="././gen/data-preparation/temp/tdm_post.csv")
+write.csv(tdm_post,file=here("gen", "data-preparation", "temp", "tdm_post.csv"))
 
 # ------- Preparing tweets for sentiment analysis -------
 # TRANSFORMATION ----
@@ -107,7 +111,8 @@ scores_post <- get_nrc_sentiment(sentiment_post, language = 'dutch')
 # OUTPUT ----
 # Save cleaned data
 print("Saving 'scored' tweet matrices as Rdata files")
-save(scores_pre,file="./gen/data-preparation/output/scores_pre.RData")
-save(scores_post,file="./gen/data-preparation/output/scores_post.RData")
+save(scores_pre,file=here("gen", "data-preparation", "temp", "scores_pre.RData"))
+
+save(scores_post,file=here("gen", "data-preparation", "temp", "scores_post.RData"))
 
 

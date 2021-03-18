@@ -5,36 +5,36 @@
 # OVERALL BUILD RULES
 all: data_cleaned results paper
 paper: gen/paper/output/paper.pdf
-data_cleaned: gen/data-preparation/output/data_cleaned.RData
-results: gen/analysis/output/model_results.RData
+data_cleaned: gen/data-preparation/output/merged_sentiment.RData
+#results: gen/analysis/output/analysis_results.RData
 .PHONY: clean
 
 # INDIVIDUAL RECIPES
 
 # Generate paper/text
-gen/paper/output/paper.pdf: gen/paper/output/table1.tex \
+#gen/paper/output/paper.pdf: gen/paper/output/table1.tex \
 				src/paper/paper.tex
-	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex'
-	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex'
-	pdflatex -output-directory='gen/paper/output/' 'src/paper/paper.tex'
+#	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex'
+#	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex'
+#	pdflatex -output-directory='gen/paper/output/' 'src/paper/paper.tex'
 # Note: runs pdflatex multiple times to have correct cross-references
 
 # Generate tables
-gen/paper/output/table1.tex: gen/analysis/output/model_results.RData \
-				src/paper/tables.R
-	Rscript src/paper/tables.R
+#gen/paper/output/table1.tex: gen/analysis/output/analysis_results.RData \
+#	Rscript src/paper/tables.R
 
 # Run analysis
-gen/analysis/output/model_results.RData: gen/data-preparation/output/data_cleaned.RData \
+gen/analysis/output/analysis_results.RData: gen/data-preparation/output/merged_sentiment.RData \
 						src/analysis/analyze.R
 	Rscript src/analysis/update_input.R
 	Rscript src/analysis/analyze.R
 
-# Clean data
-gen/data-preparation/output/data_cleaned.RData: data/dataset_eredivisie.csv \
+# Clean and merge data
+gen/data-preparation/output/merged_sentiment.RData: data/dataset_eredivisie.csv \
 						src/data-preparation/clean_data.R
 	Rscript src/data-preparation/update_input.R
 	Rscript src/data-preparation/clean_data.R
+	Rscript src/data-preparation/merge_data.R
 
 # Download data
 data/dataset_eredivisie.csv: src/data-preparation/download_data.R

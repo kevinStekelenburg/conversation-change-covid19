@@ -21,3 +21,4 @@ merged_sentiment <- bind_rows(scores_pre, scores_post)
 # OUTPUT ----
 print("Saving merged dataset for sentiment analysis as csv")
 write.csv(merged_sentiment,file=here("gen", "data-preparation", "output", "merged_sentiment.csv"))
+save(merged_sentiment,file=here("gen", "data-preparation", "temp", "merged_sentiment.RData"))

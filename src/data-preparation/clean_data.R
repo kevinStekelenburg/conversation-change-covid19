@@ -112,8 +112,8 @@ scores_post <- get_nrc_sentiment(sentiment_post, language = 'dutch')
 # OUTPUT ----
 # Save cleaned data
 print("Saving 'scored' tweet matrices as Rdata files")
-save(scores_pre,file=here("gen", "data-preparation", "output", "scores_pre.RData"))
+save(scores_pre,file=here("gen", "data-preparation", "temp", "scores_pre.RData"))
 
-save(scores_post,file=here("gen", "data-preparation", "output", "scores_post.RData"))
+save(scores_post,file=here("gen", "data-preparation", "temp", "scores_post.RData"))
 
 

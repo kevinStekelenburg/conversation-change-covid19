@@ -6,41 +6,9 @@ if(!require(tm)){
   library(tm)
 }
 
-# change encoding to utf-8 and store in input_corpus
-input_corpus <- iconv(df$Text, to="utf-8")
-
-# change to corpus file (needed to do analysis)
-corpus <- Corpus(VectorSource(input_corpus))
-
-# Inspecting corpus file
-inspect(corpus[1:5])
-
-# clean text for data analysis
-# first: lowercase everything
-corpus <- tm_map(corpus, tolower)
-
-# remove punctuation
-corpus <- tm_map(corpus, removePunctuation)
-
-# remove numbers
-corpus <- tm_map(corpus, removeNumbers)
-
-# remove some common words
-corpus <- tm_map(corpus, removeWords, stopwords('dutch'))
-
-# function to remove url's from text
-remove_urls <- function(x) gsub('http[[:alnum:]]*', '', x)
-
-# actually removing url's form text
-corpus <- tm_map(corpus, content_transformer(remove_urls))
-
-# remove unnecessary blank spaced
-corpus <- tm_map(corpus, stripWhitespace)
-clean_corp <- corpus
-
-# unstructured text data to structured data by using term document matrix
-tdm <- TermDocumentMatrix(clean_corp)
-tdm <- as.matrix(tdm)
+# TDM's inladen voor Wordcount analysis
+#file="././gen/data-preparation/temp/tdm_pre.csv")
+#file="././gen/data-preparation/temp/tdm_post.csv")
 
 # wordcount of all tweets
 w <- rowSums(tdm)
@@ -60,6 +28,11 @@ wordcloud(words=names(w),
           max=100)
 
 # ------- Sentiment analysis --------#
+
+# Dataframes inladen voor sentiment analysis
+#file="././gen/data-preparation/gen/data-preparation/output/scores_pre.Rdata")
+#file="././gen/data-preparation/gen/data-preparation/output/scores_post.Rdata")
+
 # installing packages
 install.packages('syuzhet')
 install.packages("lubridate")
@@ -83,6 +56,7 @@ sentiment_post <- df %>%
 
 sentiment_pre <- iconv(sentiment_pre$Text, to="utf-8")    
 sentiment_post <- iconv(sentiment_post$Text, to="utf-8")  
+
 
 # obtain sentiment scores - store in dataframe: each row is a tweet. 
 # scores per tweet for: 

@@ -34,11 +34,6 @@ if(!require(here)){
   install.packages('here',repos = "http://cran.us.r-project.org")
   library(here)
 }  
-  
-if(!require(progress)){
-  install.packages('progress',repos = "http://cran.us.r-project.org")
-  library(progress)
-}
 
 # loading packages
 print("Loading other packages...")
@@ -135,16 +130,6 @@ sentiment_post <- iconv(sentiment_post$Text, to="utf-8")
 # anger, anticipation, disgust, fear, joy, sadness, surprise, trust, negative & positive.
 print("Scoring tweets on various sentiment criteria...")
 print("This could take a few moments. Please wait...")
-
-
-pb <- progress_bar$new(
-  format = "  Preparing sentiment scores [:bar] :percent eta: :eta",
-  total = 100, clear = FALSE, width= 60)
-for (i in 1:100) {
-  pb$tick()
-  Sys.sleep(1 / 100)
-}
-
 
 scores_pre <- get_nrc_sentiment(sentiment_pre, language = 'dutch')
 scores_post <- get_nrc_sentiment(sentiment_post, language = 'dutch')

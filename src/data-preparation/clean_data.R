@@ -3,23 +3,47 @@
 
 # installing packages
 print("Installing needed packages...")
-install.packages("tm",repos = "http://cran.us.r-project.org")
-install.packages('syuzhet',repos = "http://cran.us.r-project.org")
-install.packages("lubridate",repos = "http://cran.us.r-project.org")
-install.packages('scales',repos = "http://cran.us.r-project.org")
-install.packages('reshape2',repos = "http://cran.us.r-project.org")
-install.packages('here',repos = "http://cran.us.r-project.org")
+
+if(!require(tm)){
+  install.packages("tm",repos = "http://cran.us.r-project.org")
+  library(tm)
+}
+  
+if(!require(syuzhet)){
+    install.packages('syuzhet',repos = "http://cran.us.r-project.org")
+    library(syuzhet)
+}
+
+if(!require(lubridate)){
+  install.packages("lubridate",repos = "http://cran.us.r-project.org")
+  library(lubridate)
+}
+
+if(!require(scales)){
+  install.packages('scales',repos = "http://cran.us.r-project.org")
+  library(scales)
+}
+  
+if(!require(reshape2)){
+  install.packages('reshape2',repos = "http://cran.us.r-project.org")
+  library(reshape2)
+}
+
+#great package for dealing with relative path errors
+if(!require(here)){
+  install.packages('here',repos = "http://cran.us.r-project.org")
+  library(here)
+}  
+  
+if(!require(progress)){
+  install.packages('progress',repos = "http://cran.us.r-project.org")
+  library(progress)
+}
 
 # loading packages
-print("Loading packages...")
-library(syuzhet)
-library(lubridate)
+print("Loading other packages...")
 library(ggplot2)
-library(scales)
-library(reshape2)
 library(dplyr)
-library(tm)
-library(here) #great package for dealing with relative path errors
 
 # Load datasets into R
 df <- read.csv(here("data", "dataset_eredivisie.csv"))
@@ -84,12 +108,18 @@ tdm_post <- TermDocumentMatrix(post)
 # OUTPUT ----
 print("Saving TDM's as csv-files...")
 tdm_pre <- as.matrix(tdm_pre)
-write.csv(tdm_pre,file=here("gen", "data-preparation", "temp", "tdm_pre.csv"))
+write.csv(tdm_pre,file=here("gen", "data-preparation", "output", "tdm_pre.csv"))
 tdm_post <- as.matrix(tdm_post)
-write.csv(tdm_post,file=here("gen", "data-preparation", "temp", "tdm_post.csv"))
+write.csv(tdm_post,file=here("gen", "data-preparation", "output", "tdm_post.csv"))
+
+
+
 
 # ------- Preparing tweets for sentiment analysis -------
 # TRANSFORMATION ----
+
+
+
 sentiment_pre <- df %>% 
   filter(Season=="season19/20")
 
@@ -105,6 +135,17 @@ sentiment_post <- iconv(sentiment_post$Text, to="utf-8")
 # anger, anticipation, disgust, fear, joy, sadness, surprise, trust, negative & positive.
 print("Scoring tweets on various sentiment criteria...")
 print("This could take a few moments. Please wait...")
+
+
+pb <- progress_bar$new(
+  format = "  Preparing sentiment scores [:bar] :percent eta: :eta",
+  total = 100, clear = FALSE, width= 60)
+for (i in 1:100) {
+  pb$tick()
+  Sys.sleep(1 / 100)
+}
+
+
 scores_pre <- get_nrc_sentiment(sentiment_pre, language = 'dutch')
 scores_post <- get_nrc_sentiment(sentiment_post, language = 'dutch')
 

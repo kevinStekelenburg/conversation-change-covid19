@@ -84,9 +84,9 @@ tdm_post <- TermDocumentMatrix(post)
 # OUTPUT ----
 print("Saving TDM's as csv-files...")
 tdm_pre <- as.matrix(tdm_pre)
-write.csv(tdm_pre,file=here("gen", "data-preparation", "temp", "tdm_pre.csv"))
+write.csv(tdm_pre,file=here("gen", "data-preparation", "output", "tdm_pre.csv"))
 tdm_post <- as.matrix(tdm_post)
-write.csv(tdm_post,file=here("gen", "data-preparation", "temp", "tdm_post.csv"))
+write.csv(tdm_post,file=here("gen", "data-preparation", "output", "tdm_post.csv"))
 
 # ------- Preparing tweets for sentiment analysis -------
 # TRANSFORMATION ----
@@ -105,14 +105,15 @@ sentiment_post <- iconv(sentiment_post$Text, to="utf-8")
 # anger, anticipation, disgust, fear, joy, sadness, surprise, trust, negative & positive.
 print("Scoring tweets on various sentiment criteria...")
 print("This could take a few moments. Please wait...")
+
 scores_pre <- get_nrc_sentiment(sentiment_pre, language = 'dutch')
 scores_post <- get_nrc_sentiment(sentiment_post, language = 'dutch')
 
 # OUTPUT ----
 # Save cleaned data
 print("Saving 'scored' tweet matrices as Rdata files")
-save(scores_pre,file=here("gen", "data-preparation", "temp", "scores_pre.RData"))
+save(scores_pre,file=here("gen", "data-preparation", "output", "scores_pre.RData"))
 
-save(scores_post,file=here("gen", "data-preparation", "temp", "scores_post.RData"))
+save(scores_post,file=here("gen", "data-preparation", "output", "scores_post.RData"))
 
 

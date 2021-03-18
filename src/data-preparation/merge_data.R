@@ -15,7 +15,7 @@ scores_pre <- scores_pre %>%
 scores_post <- scores_post %>% 
   mutate(season="post")
   
-# combinding rows of datasets
+# combining rows of datasets
 merged_sentiment <- bind_rows(scores_pre, scores_post)
 
 # OUTPUT ----

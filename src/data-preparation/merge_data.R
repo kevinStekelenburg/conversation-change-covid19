@@ -10,7 +10,7 @@ load(file=here("gen", "data-preparation", "temp", "scores_post.Rdata"))
 # TRANSFORMATION ----
 # adding columns indicating pre- or postcorona
 
-print("Adding column indicating pre- or post-corona; merging two datasets")
+print("Adding column indicating pre- or post-corona; merging two datasets...")
 scores_pre <- scores_pre %>% 
   mutate(season="pre")
 
@@ -21,6 +21,6 @@ scores_post <- scores_post %>%
 merged_sentiment <- bind_rows(scores_pre, scores_post)
 
 # OUTPUT ----
-print("Saving merged dataset for sentiment analysis as csv")
+print("Saving merged dataset for sentiment analysis as csv...")
 write.csv(merged_sentiment,file=here("gen", "data-preparation", "output", "merged_sentiment.csv"))
 save(merged_sentiment,file=here("gen", "data-preparation", "temp", "merged_sentiment.RData"))

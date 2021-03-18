@@ -3,17 +3,17 @@
 # - Careful with spaces! If use \ to split to multiple lines, cannot have a space after \
 
 # OVERALL BUILD RULES
-all: data_cleaned results paper
-paper: gen/paper/output/paper.pdf
-data_cleaned: gen/data-preparation/output/merged_sentiment.RData
-#results: gen/analysis/output/analysis_results.RData
+all: data_cleaned results #paper
+#paper: gen/paper/output/paper.pdf
+data_cleaned: gen/data-preparation/output/merged_sentiment.csv
+results: gen/analysis/output/analysis_results.RData
 .PHONY: clean
 
 # INDIVIDUAL RECIPES
 
 # Generate paper/text
 #gen/paper/output/paper.pdf: gen/paper/output/table1.tex \
-				src/paper/paper.tex
+				#src/paper/paper.tex
 #	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex'
 #	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex'
 #	pdflatex -output-directory='gen/paper/output/' 'src/paper/paper.tex'
@@ -24,14 +24,17 @@ data_cleaned: gen/data-preparation/output/merged_sentiment.RData
 #	Rscript src/paper/tables.R
 
 # Run analysis
-gen/analysis/output/analysis_results.RData: gen/data-preparation/output/merged_sentiment.RData \
-						src/analysis/analyze.R
+gen/analysis/output/analysis_results.RData: gen/data-preparation/output/merged_sentiment.csv \
+						src/analysis/analyze.R \
+						src/analysis/update_input.R
 	Rscript src/analysis/update_input.R
 	Rscript src/analysis/analyze.R
 
 # Clean and merge data
-gen/data-preparation/output/merged_sentiment.RData: data/dataset_eredivisie.csv \
-						src/data-preparation/clean_data.R
+gen/data-preparation/output/merged_sentiment.csv: data/dataset_eredivisie.csv \
+						src/data-preparation/clean_data.R \
+						src/data-preparation/update_input.R \
+						src/data-preparation/merge_data.R
 	Rscript src/data-preparation/update_input.R
 	Rscript src/data-preparation/clean_data.R
 	Rscript src/data-preparation/merge_data.R

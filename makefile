@@ -3,10 +3,12 @@
 # - Careful with spaces! If use \ to split to multiple lines, cannot have a space after \
 
 # OVERALL BUILD RULES
-all: data_cleaned results #paper
-#paper: gen/paper/output/paper.pdf
-data_cleaned: gen/data-preparation/output/merged_sentiment.csv
+
+all: data_cleaned data_merged results #paper
+data_cleaned: gen/data-preparation/output/tdm_pre.csv gen/data-preparation/output/tdm_post.csv gen/data-preparation/output/scores_pre.RData gen/data-preparation/output/scores_post.RData
+data_merged: gen/data-preparation/output/merged_sentiment.csv
 results: gen/analysis/output/analysis_results.RData
+#paper: gen/paper/output/paper.pdf
 .PHONY: clean
 
 # INDIVIDUAL RECIPES
@@ -24,23 +26,31 @@ results: gen/analysis/output/analysis_results.RData
 #	Rscript src/paper/tables.R
 
 # Run analysis
-gen/analysis/output/analysis_results.RData: gen/data-preparation/output/merged_sentiment.csv \
+gen/analysis/output/analysis_results.RData:
+						gen/data-preparation/output/merged_sentiment.csv \
 						src/analysis/analyze.R \
 						src/analysis/update_input.R
 	Rscript src/analysis/update_input.R
 	Rscript src/analysis/analyze.R
 
-# Clean and merge data
-gen/data-preparation/output/merged_sentiment.csv: data/dataset_eredivisie.csv \
-						src/data-preparation/clean_data.R \
-						src/data-preparation/update_input.R \
+# Merge data
+gen/data-preparation/output/merged_sentiment.csv:
+						gen/data-preparation/output/scores_pre.RData \
+						gen/data-preparation/output/scores_post.RData \
 						src/data-preparation/merge_data.R
-	Rscript src/data-preparation/update_input.R
-	Rscript src/data-preparation/clean_data.R
 	Rscript src/data-preparation/merge_data.R
 
+# Clean data
+gen/data-preparation/output/tdm_pre.csv gen/data-preparation/output/tdm_post.csv gen/data-preparation/output/scores_pre.RData gen/data-preparation/output/scores_post.RData:
+						data/dataset_eredivisie.csv \
+						src/data-preparation/clean_data.R \
+						src/data-preparation/update_input.R
+	Rscript src/data-preparation/update_input.R
+	Rscript src/data-preparation/clean_data.R
+
 # Download data
-data/dataset_eredivisie.csv: src/data-preparation/download_data.R
+data/dataset_eredivisie.csv:
+						src/data-preparation/download_data.R
 	Rscript src/data-preparation/download_data.R
 
 # Clean-up: Deletes temporary files

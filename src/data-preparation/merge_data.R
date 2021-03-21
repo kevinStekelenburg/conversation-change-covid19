@@ -4,8 +4,8 @@ print("Reading pre- and post-corona dataframes for sentiment analysis...")
 
 library(here)
 library(dplyr)
-load(file=here("gen", "data-preparation", "temp", "scores_pre.Rdata"))
-load(file=here("gen", "data-preparation", "temp", "scores_post.Rdata"))
+load(file=here("gen", "data-preparation", "output", "scores_pre.Rdata"))
+load(file=here("gen", "data-preparation", "output", "scores_post.Rdata"))
 
 # TRANSFORMATION ----
 # adding columns indicating pre- or postcorona

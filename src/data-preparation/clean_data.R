@@ -1,5 +1,3 @@
-# ------- Wordcount (Term Document Matrix creation) -------- 
-# INPUT ----
 
 
 # installing packages
@@ -40,6 +38,9 @@ if(!require(here)){
 print("Loading other packages...")
 library(ggplot2)
 library(dplyr)
+
+
+# INPUT ----
 
 # Load datasets into R
 df <- read.csv(here("data", "dataset_eredivisie.csv"))
@@ -109,11 +110,8 @@ tdm_post <- as.matrix(tdm_post)
 write.csv(tdm_post,file=here("gen", "data-preparation", "output", "tdm_post.csv"))
 
 
-
-
 # ------- Preparing tweets for sentiment analysis -------
 # TRANSFORMATION ----
-
 
 
 sentiment_pre <- df %>% 
@@ -138,8 +136,7 @@ scores_post <- get_nrc_sentiment(sentiment_post, language = 'dutch')
 # OUTPUT ----
 # Save cleaned data
 print("Saving 'scored' tweet matrices as Rdata files")
-save(scores_pre,file=here("gen", "data-preparation", "temp", "scores_pre.RData"))
-
-save(scores_post,file=here("gen", "data-preparation", "temp", "scores_post.RData"))
+save(scores_pre,file=here("gen", "data-preparation", "output", "scores_pre.RData"))
+save(scores_post,file=here("gen", "data-preparation", "output", "scores_post.RData"))
 
 

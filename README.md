@@ -28,4 +28,4 @@ Jonathan Grix, Paul Michael Brannagan, Holly Grimes, Ross Neville. (2020). The i
 
 ## About
 
-_Explain who has contributed to the repository. You can say it has been part of a class you've taken at Tilburg University._
+This dataset has been created by Stan Wiggers, Kevin Stekelenburg, Ruben Custers, Eric Volten and Anne van Veenendaal. The dataset has been created on behalf of Tilburg University for the courses Online Data Collections (oDCM) and Data Preparation and Workflow Management (DPrep). 

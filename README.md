@@ -19,6 +19,7 @@ In general, this dataset was thus created to explore the effects of the Covid-19
 Our method consists of 5 steps.
 
 Step 1 - _Data collection_
+
 Step 1 consists of the data collection. That data will be scraped from twitter.com with hashtags of the 18 eredivisie clubs.  The following hashtags were used: #AdoDenHaag #AFCAjax #AZalkmaar #FCEmmen #FCGroningen #FCTwente #FCUtrecht #Feyenoord #FortunaSittard #Heracles #PECZwolle #PSV #RKCWaalwijk #SCHeerenveen #SpartaRotterdam #Vitesse #VVVVenlo #WillemII. Some hashtags (e.g. #ajax) return foreign tweets that are containing this hashtag, but are unrelated to the football club. Therefore, hashtags which resulted in the most related tweets (by observing a sample of tweets) were sought and proved to be the full names of the soccer clubs.
 As the research objective is to make a comparison between before Covid-19 and during Covid 19, different weekends were selected to scrape. The weekends selected are:  
 Season 2019/2020 (Before Covid-19)
@@ -32,11 +33,13 @@ These specific weekends were selected because they have a the same amount of gam
 The entities or instances that are scraped are tweets and the different variables that the tweets contain. The tweets can be from: private individuals, organizations and the soccer teams. For the analysis the variables date, content, unique id and usernames are needed. Next to this, the variables URL, reply count, retweet count, like count, location, user followers count, user friends count and tweet source were scraped. The data is split in a csv file per scraped time period and then merged into one csv file. 
 
 Step 2 - Data Preparation
+
 Step 2 consists of data preperation and cleaning. In this step we preformed some basic cleaning steps. After cleaning the data is ready to be analyzed. 
 
 Step 3 - _Sentiment analysis_
 
 Step 5 - _Presentation of output_
+
 After the data analysis, the data can be visualized. The most important findings are graphically displayed below. 
 
 ![image](https://user-images.githubusercontent.com/79858036/112064499-593b1700-8b63-11eb-9040-fcdf0697310f.png)

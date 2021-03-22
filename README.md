@@ -40,6 +40,8 @@ Step 5 - _Presentation of output_
 After the data analysis, the data can be visualized. The most important findings are graphically displayed below. 
 
 ![image](https://user-images.githubusercontent.com/79858036/112064499-593b1700-8b63-11eb-9040-fcdf0697310f.png)
+![image](https://user-images.githubusercontent.com/79858036/112064666-a1f2d000-8b63-11eb-81d8-ff0b86136a52.png)
+
 
 
 _First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.

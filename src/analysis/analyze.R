@@ -78,6 +78,7 @@ plot_posneg <- filter(merged_sentiment, emotion == "positive" | emotion == "nega
 # OUTPUT ----
 # Saving plots and outputs
 print("Saving plots in pdf-file...")
+save(plot_wordcount, plot_emotions, plot_posneg, file = "./gen/analysis/output/analysis_results.RData")
 pdf(here("gen", "analysis", "output", "plots.pdf"))
 print(plot_wordcount)
 print(plot_emotions)

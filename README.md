@@ -63,7 +63,9 @@ __Related documentation__
 For more information about the scraper used in this study go to:  https://betterprogramming.pub/how-to-scrape-tweets-with-snscrape-90124ed006af or https://github.com/MartinBeckUT/TwitterScraper
 
 More information on online data collections in general? Go to: https://odcm.hannesdatta.com/
+
 More information on data preperation? Go to: https://dprep.hannesdatta.com/
+
 Want to save time and control your empirical research projects? Go to: https://tilburgsciencehub.com/
 
 __Related Literature__

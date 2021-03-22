@@ -16,6 +16,31 @@ In general, this dataset was thus created to explore the effects of the Covid-19
 
 
 ## Method and results
+Our method consists of 5 steps.
+
+Step 1 - _Data collection_
+Step 1 consists of the data collection. That data will be scraped from twitter.com with hashtags of the 18 eredivisie clubs.  The following hashtags were used: #AdoDenHaag #AFCAjax #AZalkmaar #FCEmmen #FCGroningen #FCTwente #FCUtrecht #Feyenoord #FortunaSittard #Heracles #PECZwolle #PSV #RKCWaalwijk #SCHeerenveen #SpartaRotterdam #Vitesse #VVVVenlo #WillemII. Some hashtags (e.g. #ajax) return foreign tweets that are containing this hashtag, but are unrelated to the football club. Therefore, hashtags which resulted in the most related tweets (by observing a sample of tweets) were sought and proved to be the full names of the soccer clubs.
+As the research objective is to make a comparison between before Covid-19 and during Covid 19, different weekends were selected to scrape. The weekends selected are:  
+Season 2019/2020 (Before Covid-19)
+Period 1: Round 14 - 22 23 24 November 2019
+Period 2: Round 20 - 24 25 26 January 2020
+
+Season 2020/2021 (During Covid-19)
+Period 1: Round 10 - 27 28 29 November 2020
+Period 2: Round 18 - 22 23 24 January 2021
+These specific weekends were selected because they have a the same amount of games with a similar degree of hypothesized ‘buzz’. With buzz we refer to the degree of rivalry between the soccer clubs and degree of exciting results. 
+The entities or instances that are scraped are tweets and the different variables that the tweets contain. The tweets can be from: private individuals, organizations and the soccer teams. For the analysis the variables date, content, unique id and usernames are needed. Next to this, the variables URL, reply count, retweet count, like count, location, user followers count, user friends count and tweet source were scraped. The data is split in a csv file per scraped time period and then merged into one csv file. 
+
+Step 2 - Data Preparation
+Step 2 consists of data preperation and cleaning. In this step we preformed some basic cleaning steps. After cleaning the data is ready to be analyzed. 
+
+Step 3 - _Sentiment analysis_
+
+Step 5 - _Presentation of output_
+After the data analysis, the data can be visualized. The most important findings are graphically displayed below. 
+
+![image](https://user-images.githubusercontent.com/79858036/112064499-593b1700-8b63-11eb-9040-fcdf0697310f.png)
+
 
 _First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
 Second, summarize your results concisely. Make use of subheaders where appropriate._
@@ -30,7 +55,11 @@ _Explain to potential users how to run/replicate your workflow. Touch upon, if n
 
 ## More resources
 __Related documentation__ 
+For more information about the scraper used in this study go to:  https://betterprogramming.pub/how-to-scrape-tweets-with-snscrape-90124ed006af or https://github.com/MartinBeckUT/TwitterScraper
 
+More information on online data collections in general? Go to: https://odcm.hannesdatta.com/
+More information on data preperation? Go to: https://dprep.hannesdatta.com/
+Want to save time and control your empirical research projects? Go to: https://tilburgsciencehub.com/
 
 __Related Literature__
 

@@ -23,9 +23,11 @@ _Explain to potential users how to run/replicate your workflow. Touch upon, if n
 _Related documentation_ 
 
 _Related Literature_
-Related literature: Bond, A. J., Cockayne, D., Ludvigsen, J. A. L., Maguire, K., Parnell, D., Plumley, D., ... & Wilson, R. (2020). COVID-19: the return of football fans. Managing sport and leisure, 1-11.
+
+Bond, A. J., Cockayne, D., Ludvigsen, J. A. L., Maguire, K., Parnell, D., Plumley, D., ... & Wilson, R. (2020). COVID-19: the return of football fans. Managing sport and leisure, 1-11.
 
 __References__
+
 Jonathan Grix, Paul Michael Brannagan, Holly Grimes, Ross Neville. (2020). The impact of Covid-19 on sport. _International Journal of Sport Policy and Politics_, 1-12.
 
 ## About

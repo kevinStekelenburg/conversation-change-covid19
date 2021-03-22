@@ -29,15 +29,24 @@ _Provide an overview of the directory structure and files._
 _Explain to potential users how to run/replicate your workflow. Touch upon, if necessary, the required input data, which (secret) credentials are required (and how to obtain them), which software tools are needed to run the workflow (including links to the installation instructions), and how to run the workflow. Make use of subheaders where appropriate._
 
 ## More resources
-_Related documentation_ 
+__Related documentation__ 
 
-_Related Literature_
+
+__Related Literature__
 
 Bond, A. J., Cockayne, D., Ludvigsen, J. A. L., Maguire, K., Parnell, D., Plumley, D., ... & Wilson, R. (2020). COVID-19: the return of football fans. Managing sport and leisure, 1-11.
 
 __References__
 
-Jonathan Grix, Paul Michael Brannagan, Holly Grimes, Ross Neville. (2020). The impact of Covid-19 on sport. _International Journal of Sport Policy and Politics_, 1-12.
+Grix, J., Brannagan, P. M., Grimes, H., & Neville, R. (2020). The impact of Covid-19 on sport. International Journal of Sport Policy and Politics, 1-12.
+
+Lechner, F. J. (2007). Imagined communities in the global game: Soccer and the development of Dutch national identity. Global networks, 7(2), 215-229.
+
+Boen, F., Vanbeselaere, N., & Feys, J. (2002). Behavioral consequences of fluctuating group success: An Internet study of soccer-team fans. The Journal of social psychology, 142(6), 769-781.
+
+Kassing, J. W., & Sanderson, J. (2010). Fan–athlete interaction and Twitter tweeting through the Giro: A case study. International journal of sport communication, 3(1), 113-128.
+
+Johnes, M. (2008). We Hate England! We Hate England? National Identity and Anti-Englishness in Welsh Soccer Fan Culture. Soccer Review.
 
 ## About
 

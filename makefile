@@ -4,7 +4,7 @@
 
 # OVERALL BUILD RULES
 
-all: data_cleaned data_merged results #paper
+all: data_cleaned data_merged results paper
 data_cleaned: gen/data-preparation/output/tdm_pre.csv gen/data-preparation/output/tdm_post.csv gen/data-preparation/output/scores_pre.RData gen/data-preparation/output/scores_post.RData
 data_merged: gen/data-preparation/output/merged_sentiment.csv
 results: gen/analysis/output/analysis_results.RData

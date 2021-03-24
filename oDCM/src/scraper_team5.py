@@ -96,12 +96,14 @@ def get_twitterdata(filename,
 
     print(f'Done with data from {season} {period}!')
 
+eredivisie_clubs='#AdoDenHaag OR #AFCAjax OR #AZalkmaar OR #FCEmmen OR #FCGroningen OR #FCTwente OR #FCUtrecht OR #Feyenoord OR #FortunaSittard OR #Heracles OR #PECZwolle OR #PSV OR #RKCWaalwijk OR #SCHeerenveen OR #SpartaRotterdam OR #Vitesse OR #VVVVenlo OR #WillemII'
+data_path="../../oDCM/data/",
 
 # Now scraping tweets for Eredivisie Hashtags, Season X and Period X
 # Season 19/20, period 1
 get_twitterdata(filename= 'season19-20period1max100.csv',
                 path= "../../oDCM/data/",
-                searchq= '#AdoDenHaag OR #AFCAjax OR #AZalkmaar OR #FCEmmen OR #FCGroningen OR #FCTwente OR #FCUtrecht OR #Feyenoord OR #FortunaSittard OR #Heracles OR #PECZwolle OR #PSV OR #RKCWaalwijk OR #SCHeerenveen OR #SpartaRotterdam OR #Vitesse OR #VVVVenlo OR #WillemII',
+                searchq= eredivisie_clubs,
                 since = '2019-11-22',
                 until = '2019-11-24',
                 season= 'season19/20',
@@ -112,7 +114,7 @@ sleep(5)
 # Season 19/20, period 2
 get_twitterdata(filename= 'season19-20period2max100.csv',
                 path= "../../oDCM/data/",
-                searchq= '#AdoDenHaag OR #AFCAjax OR #AZalkmaar OR #FCEmmen OR #FCGroningen OR #FCTwente OR #FCUtrecht OR #Feyenoord OR #FortunaSittard OR #Heracles OR #PECZwolle OR #PSV OR #RKCWaalwijk OR #SCHeerenveen OR #SpartaRotterdam OR #Vitesse OR #VVVVenlo OR #WillemII',
+                searchq= eredivisie_clubs,
                 since = '2020-01-24',
                 until = '2020-01-26',
                 season= 'season19/20',
@@ -123,7 +125,7 @@ sleep(5)
 # Season 20/21, period 1
 get_twitterdata(filename= 'season20-21period1max100.csv',
                 path= "../../oDCM/data/",
-                searchq= '#AdoDenHaag OR #AFCAjax OR #AZalkmaar OR #FCEmmen OR #FCGroningen OR #FCTwente OR #FCUtrecht OR #Feyenoord OR #FortunaSittard OR #Heracles OR #PECZwolle OR #PSV OR #RKCWaalwijk OR #SCHeerenveen OR #SpartaRotterdam OR #Vitesse OR #VVVVenlo OR #WillemII',
+                searchq= eredivisie_clubs,
                 since = '2020-11-27',
                 until = '2020-11-29',
                 season= 'season20/21',
@@ -134,7 +136,7 @@ sleep(5)
 # Season 20/21, period 2
 get_twitterdata(filename= 'season20-21period2max100.csv',
                 path= "../../oDCM/data/",
-                searchq= '#AdoDenHaag OR #AFCAjax OR #AZalkmaar OR #FCEmmen OR #FCGroningen OR #FCTwente OR #FCUtrecht OR #Feyenoord OR #FortunaSittard OR #Heracles OR #PECZwolle OR #PSV OR #RKCWaalwijk OR #SCHeerenveen OR #SpartaRotterdam OR #Vitesse OR #VVVVenlo OR #WillemII',
+                searchq= eredivisie_clubs,
                 since = '2021-01-22',
                 until = '2021-01-24',
                 season= 'season20/21',

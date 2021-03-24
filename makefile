@@ -23,7 +23,7 @@ gen/paper/output/paper.pdf: gen/paper/output/table1.tex \
 
 # Generate tables
 gen/paper/output/table1.tex: gen/analysis/output/analysis_results.RData \
-	Rscript src/paper/tables.R
+	Rscript src/paper/pdf.R
 
 # Run analysis
 gen/analysis/output/analysis_results.RData: gen/data-preparation/output/merged_sentiment.csv \

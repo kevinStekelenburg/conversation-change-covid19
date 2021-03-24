@@ -76,10 +76,15 @@ plot_posneg <- filter(merged_sentiment_sum, emotion == "positive" | emotion == "
   scale_fill_manual(values = c("#606060", "#B3B3B3"))
 
 # ACTUAL ANALYSIS FOR PAPER
+if(!require(ggpubr)){
+  install.packages("ggpubr",repos = "http://cran.us.r-project.org")
+  library(ggpubr)
+}
+if(!require(rstatix)){
+  install.packages("rstatix",repos = "http://cran.us.r-project.org")
+  library(rstatix)
+}
 
-# <- misschien hieronder code voor only install if package missing
-install.packages('ggpubr')
-install.packages('rstatix')
 library(ggpubr)
 library(rstatix)
 
@@ -174,6 +179,8 @@ t_positive <- merged_sentiment %>%
 t_tests <- bind_rows(list(t_anger, t_anticipation, t_disgust,
                                t_fear, t_joy, t_sadness, t_surprise,
                                t_trust, t_negative, t_positive))
+t_tests <- t_tests %>% 
+  rename(variable=.y.)
 
 # Creating boxplots for t-test
 # Relationship corona - Anger in tweets

@@ -40,17 +40,17 @@ w_post <- tdm_post %>%
   mutate(season="post")
 
 w_merged <- bind_rows(w_pre, w_post)
+# only selecting words occuring more than 150 times to strip out irrelevant words.
 w_merged <- filter(w_merged, count>150)
 
-# Creating barplot - wordcount
+# Creating barplot - wordcount (exploration)
 plot_wordcount <- ggplot(w_merged, aes(x=word, y=count, fill=season))+
   geom_col(position=position_dodge(width=1))+
   coord_flip()+
-  scale_fill_manual(values = c("#bbe3b3", "#e3bab3"))+
-  ggtitle("Count of words used in tweets", subtitle="For words occuring at least 150 times pre-corona or post-corona")
+  scale_fill_manual(values = c("#606060", "#B3B3B3"))
 
-# Preparing for plot - sentiment analysis
-merged_sentiment <- merged_sentiment %>% 
+# Preparing for plot of sums - sentiment analysis (exploration)
+merged_sentiment_sum <- merged_sentiment %>% 
   group_by(season) %>% 
   summarize(anger=sum(anger),
             anticipation=sum(anticipation),
@@ -65,23 +65,33 @@ merged_sentiment <- merged_sentiment %>%
   tidyr::gather("emotion", "count", -season)
 
 # Creating plot for sentiment
-plot_emotions <- filter(merged_sentiment, emotion != "positive" & emotion != "negative") %>% ggplot(aes(x=emotion, y=count, fill=season))+
+plot_emotions <- filter(merged_sentiment_sum, emotion != "positive" & emotion != "negative") %>% 
+  ggplot(aes(x=emotion, y=count, fill=season))+
   geom_col(position=position_dodge(width=1))+
-  scale_fill_manual(values = c("#bbe3b3", "#e3bab3"))+
-  ggtitle("Emotions in tweets", subtitle="Devided into pre- and post-corona tweets")
+  scale_fill_manual(values = c("#606060", "#B3B3B3"))
 
-plot_posneg <- filter(merged_sentiment, emotion == "positive" | emotion == "negative") %>% ggplot(aes(x=emotion, y=count, fill=season))+
+plot_posneg <- filter(merged_sentiment_sum, emotion == "positive" | emotion == "negative") %>% 
+  ggplot(aes(x=emotion, y=count, fill=season))+
   geom_col(position=position_dodge(width=1))+
-  scale_fill_manual(values = c("#bbe3b3", "#e3bab3"))+
-  ggtitle("Positivity vs. negativity in tweets", subtitle="Devided into pre- and post-corona tweets")
+  scale_fill_manual(values = c("#606060", "#B3B3B3"))
+
+# ACTUAL ANALYSIS FOR PAPER
+
 
 # OUTPUT ----
 # Saving plots and outputs
 print("Saving plots in pdf-file...")
-save(plot_wordcount, plot_emotions, plot_posneg, file = "./gen/analysis/output/analysis_results.RData")
-pdf(here("gen", "analysis", "output", "plots.pdf"))
+save(plot_wordcount, plot_emotions, plot_posneg, file = here("gen", "analysis", "output", "analysis_results.RData"))
+
+pdf(here("gen", "analysis", "output", "plot_wordcount_sum.pdf"))
 print(plot_wordcount)
+dev.off()
+
+pdf(here("gen", "analysis", "output", "plot_emotions_sum.pdf"))
 print(plot_emotions)
+dev.off()
+
+pdf(here("gen", "analysis", "output", "plot_posneg_sum.pdf"))
 print(plot_posneg)
 dev.off()
 

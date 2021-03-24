@@ -1,6 +1,20 @@
 # Scraping Old Tweets of the #eredivisie
 
 
+
+# ------------ WARNING ----------------
+
+print("WARNING: Scraper does not work with python versions below 3.8.5!"")
+
+# Scraper does not work with python versions below 3.8.5!
+# Please download te latest version of python before using this scraper and put the scraper into the Path of your computer
+# Python download: https://www.python.org/downloads/
+# Path explanation: https://tilburgsciencehub.com/building-blocks/configure-your-computer/statistics-and-computation/r/
+#                   https://tilburgsciencehub.com/building-blocks/configure-your-computer/automation-and-workflows/environment/
+
+# -------------------------------------
+
+
 # Explanation:
 # We will scrape tweets from twitter.com with hashtags of the 18 eredivisie clubs to see if the conversation on twitter changed about football clubs in the Netherlands due to COVID-19
 

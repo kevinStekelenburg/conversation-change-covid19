@@ -29,11 +29,13 @@ As the research objective is to make a comparison between before Covid-19 and du
 Season 2019/2020 (Before Covid-19)
 
 Period 1: Round 14 - 22 23 24 November 2019
+
 Period 2: Round 20 - 24 25 26 January 2020
 
 Season 2020/2021 (During Covid-19)
 
 Period 1: Round 10 - 27 28 29 November 2020
+
 Period 2: Round 18 - 22 23 24 January 2021
 
 These specific weekends were selected because they have a the same amount of games with a similar degree of hypothesized ‘buzz’. With buzz we refer to the degree of rivalry between the soccer clubs and degree of exciting results. 
@@ -44,9 +46,10 @@ Step 2 - _Data Preparation_
 Step 2 consists of data preperation and cleaning. In this step we preformed some basic cleaning steps. After cleaning the data is ready to be analyzed. 
 
 Step 3 - _Analysis_
+
 For the sentiment analysis, a new dataset was created that counts the amount of words that contain the emotions: anger, anticipation, disgust, fear, joy, sadness, surprise and trust. Next to the emotions, tweets were evaluated on negativity and positivity.
 
-For the _First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
+ _First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
 Step 5 - _Presentation of output_
 
 In the plot below one can find an overview of the amount of tweets per hashtag per period. As visualized in the plot, Feyenoord and PSV are especially popular on Twitter during the selected timeframe as they are mentioned the most. 

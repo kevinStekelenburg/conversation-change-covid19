@@ -25,13 +25,17 @@ Step 1 - _Data collection_
 
 Step 1 consists of the data collection. That data will be scraped from twitter.com with hashtags of the 18 eredivisie clubs.  The following hashtags were used: #AdoDenHaag #AFCAjax #AZalkmaar #FCEmmen #FCGroningen #FCTwente #FCUtrecht #Feyenoord #FortunaSittard #Heracles #PECZwolle #PSV #RKCWaalwijk #SCHeerenveen #SpartaRotterdam #Vitesse #VVVVenlo #WillemII. Some hashtags (e.g. #ajax) return foreign tweets that are containing this hashtag, but are unrelated to the football club. Therefore, hashtags which resulted in the most related tweets (by observing a sample of tweets) were sought and proved to be the full names of the soccer clubs.
 As the research objective is to make a comparison between before Covid-19 and during Covid 19, different weekends were selected to scrape. The weekends selected are:  
+
 Season 2019/2020 (Before Covid-19)
+
 Period 1: Round 14 - 22 23 24 November 2019
 Period 2: Round 20 - 24 25 26 January 2020
 
 Season 2020/2021 (During Covid-19)
+
 Period 1: Round 10 - 27 28 29 November 2020
 Period 2: Round 18 - 22 23 24 January 2021
+
 These specific weekends were selected because they have a the same amount of games with a similar degree of hypothesized ‘buzz’. With buzz we refer to the degree of rivalry between the soccer clubs and degree of exciting results. 
 The entities or instances that are scraped are tweets and the different variables that the tweets contain. The tweets can be from: private individuals, organizations and the soccer teams. For the analysis the variables date, content, unique id and usernames are needed. Next to this, the variables URL, reply count, retweet count, like count, location, user followers count, user friends count and tweet source were scraped. The data is split in a csv file per scraped time period and then merged into one csv file. 
 
@@ -40,14 +44,16 @@ Step 2 - _Data Preparation_
 Step 2 consists of data preperation and cleaning. In this step we preformed some basic cleaning steps. After cleaning the data is ready to be analyzed. 
 
 Step 3 - _Analysis_
-_First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
+For the sentiment analysis, a new dataset was created that counts the amount of words that contain the emotions: anger, anticipation, disgust, fear, joy, sadness, surprise and trust. Next to the emotions, tweets were evaluated on negativity and positivity.
+
+For the _First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
 Step 5 - _Presentation of output_
 
 In the plot below one can find an overview of the amount of tweets per hashtag per period. As visualized in the plot, Feyenoord and PSV are especially popular on Twitter during the selected timeframe as they are mentioned the most. 
   
 ![image](https://user-images.githubusercontent.com/79858036/112386731-9b925e80-8cf1-11eb-879b-6f7723ef768d.png)
 
-For the sentiment analysis, a new dataset was created that counts the amount of words that contain the emotions: anger, anticipation, disgust, fear, joy, sadness, surprise and trust. Next to the emotions, tweets were evaluated on negativity and positivity. The count per variable per period is displayed in the graph below. 
+The count per emotion per period is displayed in the graph below. 
 
 ![image](https://user-images.githubusercontent.com/79858036/112387040-c11f6800-8cf1-11eb-8a28-0b5b3929ae16.png)
  
@@ -61,21 +67,30 @@ As already evident in the table, there are significant effects detected for seve
 
 ## Repository overview
 
-_Provide an overview of the directory structure and files._
+There are three folders, named "data", "src" and "Odcm". Next to this, a .gitignore file, a README.md file (which you are reading now) and a makefile are included. 
+
+The Odcm folder contains the scraper for collecting the data. Within this file, the data from each weekend that was scraped and then combined into one csv file. This folder also contains a documentation file which gives more background information about the data. 
+ 
+ In the src folder,  the data is downloaded, prepared for analysis and merged in the data preparation file. For the analysis  a new dataset was created that counts the amount of words that contain the sentiments of interest. After this is done several Indenpendent sample T-tests have been done and data visualization plots have been included.  
+ 
+After this, a small paper is produced in the form of a PDF file. This paper explains the research and its findings in a bit more dept and shows several visualizations. 
 
 ## Running instructions
 
-Several packages should be installed in order to run this pipeline: 
-For the scraper, install: 
-Install Python
+__Dependencies__
 
-Anaconda is recommended. Download Anaconda.
-check availability: type anaconda --version in the command line.
+- R 
+- Python
+- Gnu make 
+- TeX distribution (pdflatex)
+- For the `makefile` to work, R, Gnu make and the TeX distribution (specifically `pdflatex`) need to be made available in the system path 
+- Detailed installation instructions can be found here: [tilburgsciencehub.com](http://tilburgsciencehub.com/)
 
 _Explain to potential users how to run/replicate your workflow. Touch upon, if necessary, the required input data, which (secret) credentials are required (and how to obtain them), which software tools are needed to run the workflow (including links to the installation instructions), and how to run the workflow. Make use of subheaders where appropriate._
 
 ## More resources
 __Related documentation__ 
+
 For more information about the scraper used in this study go to:  https://betterprogramming.pub/how-to-scrape-tweets-with-snscrape-90124ed006af or https://github.com/MartinBeckUT/TwitterScraper
 
 More information on online data collections in general? Go to: https://odcm.hannesdatta.com/

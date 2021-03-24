@@ -3,16 +3,19 @@
 __To what extent did the twitter conversation of Dutch Football fans change due to COVID-19 (no fans in the stadiums)?__
 
 ## Motivation
-The Covid-19 pandemic has changed the world tremendously. Many places in the world are currently in lockdown and therefore stores, museums, sports clubs and restaurants have been, or are, closed. The Netherlands has experienced several ‘corona waves’ in which the extent of the measures was different. For a while, in the first wave, professional group sports as well as amateur group sports were cancelled completely. Currently, the Netherlands allows group sports without competition for all ages under 27 years old. Next to this, professional players are allowed to play again without public in the stadiums. 
+The Covid-19 pandemic has changed the world tremendously. The Netherlands has experienced several ‘corona waves’ in which the extent of the measures was different. For a while, in the first wave, professional group sports as well as amateur group sports were cancelled completely. Currently, professional players are allowed to play again without public in the stadiums. One of the sports that is played the most and attracts the biggest crowds is soccer or football (Boen, Vanbeselaers & Feys, 2002). In general, Dutch soccer fans are known as very dedicated (Lechner, 2007). Many soccer fans hold a season ticket and are present at almost every game of their favorite soccer club. The soccer stadiums in the Netherlands can hold up to 56.000 people and are, when not in lockdown, often fully booked. Not having public in the stadiums makes it hard for the soocer clubs financially. It is vital for the soccer clubs that their will remain engaged even though they cannot be physically present. 
 
-One of the sports that is played the most and attracts the biggest crowds is soccer or football (In Dutch: voetbal. It translates to football but the game is very different from American football. The game is played like British soccer) (Boen, Vanbeselaers & Feys, 2002). In general, Dutch soccer fans are known as very dedicated and enthusiastic (Lechner, 2007). Many soccer fans hold a season ticket and are present at almost every game of their favorite soccer club. The soccer stadiums in the Netherlands can hold up to 56.000 people and are, when not in lockdown, often fully booked. 
+__This research:__
 
-As mentioned above, the current covid pandemic has forced fans to stay home and watch soccer on the television. This has created a situation that has almost never occurred in the past and it is therefore very interesting to see how this has impacted soccer fans and their interaction. Normally, the most dedicated fans can express themselves within the stadium but when watching from home, it can well be that they converted some of their interaction to social media and thus the amount of online interaction has gone up. Next to this, we are interested in whether the sentiment in the online interactions changed due to the changed situation. It is intuitive that the sentiment of fans at home is different than when standing in an arena with dozens of enthusiastic and hyped up people. As this research aims to be explorative, no clear hypotheses were generated beforehand. 
-As it are hard financial times for football clubs because there are no fans allowed in their stadiums (Grix, Brannagan, Grimes & Neville, 2020), it is vital for soccer clubs to keep their fans engaged with their team. As COVID-19 has shifted face to face interactions to digital interactions, social media is now also the main source of interaction of football clubs with their fans.
+* Takes Twitter as the social media platform for data collection. On this platform there is a lot of soccer fan interaction both between fans and with the teams. Other social media platforms such as Facebook or Instagram are more focused on sharing content whereas twitter is for interacting with one another and giving opinions (Kassing, J. W., & Sanderson, 2010). Twitter also provides several tools for additional interaction because the tweets can be ‘retweeted’ and Tweeters can directly reply on Tweets of other Tweeters. ‘Retweeting’ entails sharing the Tweet someone else created with your own network. 
 
-The social media platform that is scrapped is Twitter because there is a lot of soccer fan interaction on this platform. Other social media platforms such as Facebook or Instagram are more focused on sharing content whereas twitter is for interacting with one another and giving opinions (Kassing, J. W., & Sanderson, 2010). Twitter also provides several tools for additional interaction because the tweets can be ‘retweeted’ and Tweeters can directly reply on Tweets of other Tweeters. ‘Retweeting’ entails sharing the Tweet someone else created with your own network. 
+* Has the following research question: To what extent did the twitter conversation of Dutch Football fans change due to COVID-19 (no fans in the stadiums)?
 
-In general, this dataset was thus created to explore the effects of the Covid-19 measures on the social media interaction of soccer fans. The research question is: To what extent did the twitter conversation of Dutch Football fans change due to COVID-19 (no fans in the stadiums)? The data set contains multiple variables. Next to this, the scraper that was built for this project can easily be adapted to scrape a broader time period than the one that was chosen now. As historical Twitter data cannot be collected from the Application Protocol Interface (API), the scraper that is used is fairly unique in being able to collect historical tweets for free. Because of this, similar data sets are not publicly available. 
+* Evaluates whether some of the interaction between fans that would normally have in the stadium has transferred to online interaction. So the research looked at whether the amount of tweets has gone up. 
+
+* The researches evaluates whether the sentiment in the online interactions changed due to the changed situation. It is intuitive that the sentiment of fans at home is different than when standing in an arena with dozens of enthusiastic and hyped up people. 
+
+* Uses a scraper that can easily be adapted to scrape a broader time period than the one that was chosen in this study. The snscraper is used to webscrape the tweets because  historical Twitter data cannot be collected from the Application Protocol Interface (API). 
 
 
 ## Method and results
@@ -55,6 +58,13 @@ Second, summarize your results concisely. Make use of subheaders where appropria
 _Provide an overview of the directory structure and files._
 
 ## Running instructions
+
+Several packages should be installed in order to run this pipeline: 
+For the scraper, install: 
+Install Python
+
+Anaconda is recommended. Download Anaconda.
+check availability: type anaconda --version in the command line.
 
 _Explain to potential users how to run/replicate your workflow. Touch upon, if necessary, the required input data, which (secret) credentials are required (and how to obtain them), which software tools are needed to run the workflow (including links to the installation instructions), and how to run the workflow. Make use of subheaders where appropriate._
 

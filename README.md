@@ -50,6 +50,7 @@ Step 3 - _Analysis_
 For the sentiment analysis, a new dataset was created that counts the amount of words that contain the emotions: anger, anticipation, disgust, fear, joy, sadness, surprise and trust. Next to the emotions, tweets were evaluated on negativity and positivity.
 
  _First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
+
 Step 5 - _Presentation of output_
 
 In the plot below one can find an overview of the amount of tweets per hashtag per period. As visualized in the plot, Feyenoord and PSV are especially popular on Twitter during the selected timeframe as they are mentioned the most. 

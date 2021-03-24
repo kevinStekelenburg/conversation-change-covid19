@@ -35,23 +35,29 @@ Period 2: Round 18 - 22 23 24 January 2021
 These specific weekends were selected because they have a the same amount of games with a similar degree of hypothesized ‘buzz’. With buzz we refer to the degree of rivalry between the soccer clubs and degree of exciting results. 
 The entities or instances that are scraped are tweets and the different variables that the tweets contain. The tweets can be from: private individuals, organizations and the soccer teams. For the analysis the variables date, content, unique id and usernames are needed. Next to this, the variables URL, reply count, retweet count, like count, location, user followers count, user friends count and tweet source were scraped. The data is split in a csv file per scraped time period and then merged into one csv file. 
 
-Step 2 - Data Preparation
+Step 2 - _Data Preparation_
 
 Step 2 consists of data preperation and cleaning. In this step we preformed some basic cleaning steps. After cleaning the data is ready to be analyzed. 
 
-Step 3 - _Sentiment analysis_
-
+Step 3 - _Analysis_
+_First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
 Step 5 - _Presentation of output_
 
-After the data analysis, the data can be visualized. The most important findings are graphically displayed below. 
+In the plot below one can find an overview of the amount of tweets per hashtag per period. As visualized in the plot, Feyenoord and PSV are especially popular on Twitter during the selected timeframe as they are mentioned the most. 
+  
+![image](https://user-images.githubusercontent.com/79858036/112386731-9b925e80-8cf1-11eb-879b-6f7723ef768d.png)
 
-![image](https://user-images.githubusercontent.com/79858036/112064499-593b1700-8b63-11eb-9040-fcdf0697310f.png)
-![image](https://user-images.githubusercontent.com/79858036/112064666-a1f2d000-8b63-11eb-81d8-ff0b86136a52.png)
+For the sentiment analysis, a new dataset was created that counts the amount of words that contain the emotions: anger, anticipation, disgust, fear, joy, sadness, surprise and trust. Next to the emotions, tweets were evaluated on negativity and positivity. The count per variable per period is displayed in the graph below. 
+
+![image](https://user-images.githubusercontent.com/79858036/112387040-c11f6800-8cf1-11eb-8a28-0b5b3929ae16.png)
+ 
+To see whether there are significant difference in sentiment pre and post corona, several independent sample T-tests were performed. In the table below, one can find an overview of the summary statistics per emotion and on negativity and positivity. Next to this, the outcomes of the independent sample T-test are displayed. 
+  
+As already evident in the table, there are significant effects detected for several variables. An interesting observation is that there are more negative words in the tweets during corona than before corona. Next to this, less positivity was detected in tweets during games in Covid-19 times. 
+ 
+![image](https://user-images.githubusercontent.com/79858036/112387324-e90ecb80-8cf1-11eb-8d1f-6113786e1f20.png)
 
 
-
-_First, introduce and motivate your chosen method, and explain how it contributes to solving the research question/business problem.
-Second, summarize your results concisely. Make use of subheaders where appropriate._
 
 ## Repository overview
 

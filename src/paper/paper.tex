@@ -1,11 +1,20 @@
 \documentclass{article} %Dit is heel kort de basis structuur. De mooie versie met template heb ik online. Maar die zal ik vanavond verder afmaken.
-\usepackage{import} % required to use relative path 
-\graphicspath{dprep/conversation-change-covid19/gen/analysis/output/} %Gebruik dit om het juiste path te kiezen waar de pdf plots staan. Maar zo werkt het nog niet. Wel moet het uit die map gehaald worden waar daar staan die pdfs nu.
+\usepackage{import} % required to use relative path
+\graphicspath{../../gen/paper/input/} %Gebruik dit om het juiste path te kiezen waar de pdf plots staan. Maar zo werkt het nog niet. Wel moet het uit die map gehaald worden waar daar staan die pdfs nu.
 \begin{document}
 This is a test document to show a table. Table \ref{tab:example} is an example of how to display model results from R. %voorbeeld zin van hannes
-\includegraphics[]{figure1.png}
-\includegraphics[]{figure2.pdf} %Zo importeer je de pdf plots 
-\includegraphics[]{figure3.pdf}
-\includegraphics[]{figure4.pdf}
+\includegraphics[]{boxplot_anger.pdf}
+\includegraphics[]{boxplot_anticipation.pdf}
+\includegraphics[]{boxplot_disgust.pdf}
+\includegraphics[]{boxplot_fear.pdf}
+\includegraphics[]{boxplot_joy.pdf}
+\includegraphics[]{boxplot_negative.pdf}
+\includegraphics[]{boxplot_positive.pdf}
+\includegraphics[]{boxplot_sadness.pdf}
+\includegraphics[]{boxplot_surprise.pdf}
+\includegraphics[]{boxplot_trust.pdf}
+\includegraphics[]{plot_emotions_sum.pdf}
+\includegraphics[]{plot_posneg_sum.pdf}
+\includegraphics[]{plot_wordcount_sum.pdf}
 \input{gen/paper/output/table1.tex} %dit ga ik waarschijnlijk niet gebruiken want de path van de graphics definen lijkt me makkelijker.
 \end{document}

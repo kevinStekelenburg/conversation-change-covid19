@@ -14,7 +14,7 @@ paper: gen/paper/output/paper.pdf
 # INDIVIDUAL RECIPES
 
 # Generate paper/text
-gen/paper/output/paper.pdf: gen/paper/output/table1.tex \
+gen/paper/output/paper.pdf: gen/paper/output/boxplot_anger.pdf gen/paper/output/boxplot_anticipation.pdf gen/paper/output/boxplot_disgust.pdf gen/paper/output/boxplot_fear.pdf gen/paper/output/boxplot_joy.pdf gen/paper/output/boxplot_negative.pdf gen/paper/output/boxplot_positive.pdf gen/paper/output/boxplot_sadness.pdf gen/paper/output/boxplot_surprise.pdf gen/paper/output/boxplot_trust.pdf gen/paper/output/plot_emotions_sum.pdf gen/paper/output/plot_posneg_sum.pdf gen/paper/output/plot_wordcount_sum.pdf \
 				src/paper/paper.tex
 	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex'
 	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex'
@@ -22,7 +22,10 @@ gen/paper/output/paper.pdf: gen/paper/output/table1.tex \
 # Note: runs pdflatex multiple times to have correct cross-references
 
 # Generate tables
-gen/paper/output/table1.tex: gen/analysis/output/analysis_results.RData \
+gen/paper/output/boxplot_anger.pdf gen/paper/output/boxplot_anticipation.pdf gen/paper/output/boxplot_disgust.pdf gen/paper/output/boxplot_fear.pdf gen/paper/output/boxplot_joy.pdf gen/paper/output/boxplot_negative.pdf gen/paper/output/boxplot_positive.pdf gen/paper/output/boxplot_sadness.pdf gen/paper/output/boxplot_surprise.pdf gen/paper/output/boxplot_trust.pdf gen/paper/output/plot_emotions_sum.pdf gen/paper/output/plot_posneg_sum.pdf gen/paper/output/plot_wordcount_sum.pdf: gen/analysis/output/analysis_results.RData \
+					src/paper/pdf.R
+					src/paper/update_input.R
+	Rscript src/paper/update_input.R
 	Rscript src/paper/pdf.R
 
 # Run analysis

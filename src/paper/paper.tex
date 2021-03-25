@@ -1,20 +1,152 @@
-\documentclass{article} %Dit is heel kort de basis structuur. De mooie versie met template heb ik online. Maar die zal ik vanavond verder afmaken.
-\usepackage{import} % required to use relative path
-\graphicspath{../../gen/paper/input/} %Gebruik dit om het juiste path te kiezen waar de pdf plots staan. Maar zo werkt het nog niet. Wel moet het uit die map gehaald worden waar daar staan die pdfs nu.
+\documentclass[12pt]{article}
+\usepackage{geometry}
+ \geometry{left=1.25in,top=1.7in}
+\setlength{\parindent}{.5in}
+\renewcommand{\baselinestretch}{1.3}
+\setlength{\parskip}{\baselineskip}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\color{gray}University of Tilburg: ODCM \& DPREP}
+\rhead{\color{gray}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\usepackage[labelfont=bf]{caption}
+\captionsetup[figure]{labelfont={bf},name={Figure},labelsep=period}
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{import}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{titling}
+\usepackage{titlesec}
+\setlength{\droptitle}{-5em}
+\titleformat{\section}{\normalfont\bfseries\filcenter}{}{0pt}{}
+\titleformat{\subsection}{\normalfont\bfseries\filcenter}{}{0pt}{\itshape}
+\titleformat{\subsubsection}{\normalfont\bfseries\filcenter}{}{0pt}{\itshape}
+\titlespacing*{\section}
+  {0pt}{-.1\baselineskip}{-.1\baselineskip}  
+\titlespacing*{\subsection}
+   {0pt}{-.1\baselineskip}{-.1\baselineskip}  
+
+\graphicspath{{../../gen/paper/input/}}
+
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\fontspec{Times New Roman}
+%\newfontfamily\headingfont[]{Arial}
+\date{}
+\providecommand{\keywords}[1]
+{
+   \small	
+  \textit{\hspace{-1em} Keywords: } #1
+}
+
+\title{The influence of COVID-19 on football conversations}
+
+\author{Stan Wiggers \\ github.com/stanwiggers
+\\ \\ Kevin Stekellenburg \\ github.com/kevinStekelenburg
+\\ \\ Ruben Custers \\ github.com/rubencusters4
+\\ \\ Anne van Veenendaal \\ github.com/Anneveenendaal
+\\ \\ Eric Volten \\ github.com/Ericvolten1}
+
 \begin{document}
-This is a test document to show a table. Table \ref{tab:example} is an example of how to display model results from R. %voorbeeld zin van hannes
-\includegraphics[]{boxplot_anger.pdf}
-\includegraphics[]{boxplot_anticipation.pdf}
-\includegraphics[]{boxplot_disgust.pdf}
-\includegraphics[]{boxplot_fear.pdf}
-\includegraphics[]{boxplot_joy.pdf}
-\includegraphics[]{boxplot_negative.pdf}
-\includegraphics[]{boxplot_positive.pdf}
-\includegraphics[]{boxplot_sadness.pdf}
-\includegraphics[]{boxplot_surprise.pdf}
-\includegraphics[]{boxplot_trust.pdf}
-\includegraphics[]{plot_emotions_sum.pdf}
-\includegraphics[]{plot_posneg_sum.pdf}
+\maketitle
+\thispagestyle{fancy}
+\begin{abstract}
+  \noindent  The Covid-19 pandemic has changed the world tremendously. Many places in the world are currently in lockdown and therefore stores, museums, sports clubs and restaurants have been, or are, closed. The Netherlands has experienced several ‘corona waves’ in which the extent of the measures was different. For a while, in the first wave, professional group sports as well as amateur group sports were cancelled completely. Currently, the Netherlands allows group sports without competition for all ages under 27 years old. Next to this, professional players are allowed to play again without public in the stadiums. 
+\end{abstract}
+
+\keywords{\textit{football, fan engagement, Twitter, emotions} \vspace{8ex}}
+
+\noindent The Covid-19 pandemic has changed the world tremendously. Many places in the world are currently in lockdown and therefore stores, museums, sports clubs and restaurants have been, or are, closed. The Netherlands has experienced several ‘corona waves’ in which the extent of the measures was different. For a while, in the first wave, professional group sports as well as amateur group sports were cancelled completely. Currently, the Netherlands allows group sports without competition for all ages under 27 years old. Next to this, professional players are allowed to play again without public in the stadiums. 
+
+One of the sports that is played the most and attracts the biggest crowds is soccer or football (In Dutch: voetbal. It translates to football but the game is very different from American football. The game is played like British soccer) (Boen, Vanbeselaers \& Feys, 2002). In general, Dutch soccer fans are known as very dedicated and enthusiastic (Lechner, 2007). Many soccer fans hold a season ticket and are present at almost every game of their favorite soccer club. The soccer stadiums in the Netherlands can hold up to 56.000 people and are, when not in lockdown, often fully booked. 
+
+As mentioned above, the current covid pandemic has forced fans to stay home and watch soccer on the television. This has created a situation that has almost never occurred in the past and it is therefore very interesting to see how this has impacted soccer fans and their interaction. Normally, the most dedicated fans can express themselves within the stadium but when watching from home, it can well be that they converted some of their interaction to social media and thus the amount of online interaction has gone up. Next to this, we are interested in whether the sentiment in the online interactions changed due to the changed situation. It is intuitive that the sentiment of fans at home is different than when standing in an arena with dozens of enthusiastic and hyped up people. As this research aims to be explorative, no clear hypotheses were generated beforehand. 
+
+As it are hard financial times for football clubs because there are no fans allowed in their stadiums (Grix, Brannagan, Grimes \& Neville, 2020), it is vital for soccer clubs to keep their fans engaged with their team. As COVID-19 has shifted face to face interactions to digital interactions, social media is now also the main source of interaction of football clubs with their fans.
+
+The social media platform that is scrapped is Twitter because there is a lot of soccer fan interaction on this platform. Other social media platforms such as Facebook or Instagram are more focused on sharing content whereas twitter is for interacting with one another and giving opinions (Kassing \& Sanderson, 2010). Twitter also provides several tools for additional interaction because the tweets can be ‘retweeted’ and Tweeters can directly reply on Tweets of other Tweeters. ‘Retweeting’ entails sharing the Tweet someone else created with your own network. 
+
+In general, this dataset was thus created to explore the effects of the Covid-19 measures on the social media interaction of soccer fans. The research question is: To what extent did the twitter conversation of Dutch Football fans change due to COVID-19 (no fans in the stadiums)? The data set contains multiple variables. Next to this, the scraper that was built for this project can easily be adapted to scrape a broader time period than the one that was chosen now. As historical Twitter data cannot be collected from the Application Protocol Interface (API), the scraper that is used is fairly unique in being able to collect historical tweets for free. Because of this, similar data sets are not publicly available. 
+
+\section{Method}
+The data was scraped from twitter.com with hashtags of the 18 eredivisie clubs.  The following hashtags were used: \#AdoDenHaag \#AFCAjax \#AZalkmaar \#FCEmmen \#FCGroningen \#FCTwente \#FCUtrecht \#Feyenoord \#FortunaSittard \#Heracles \#PECZwolle \#PSV \#RKCWaalwijk \#SCHeerenveen \#SpartaRotterdam \#Vitesse \#VVVVenlo \#WillemII. Some hashtags (e.g. \#ajax) return foreign tweets that are containing this hashtag, but are unrelated to the football club. Therefore, hashtags which resulted in the most related tweets (by observing a sample of tweets) were sought and proved to be the full names of the soccer clubs.
+
+As the research objective is to make a comparison between before Covid-19 and during Covid 19, different weekends were selected to scrape. The weekends selected are shown in table 1 and table 2.  
+
+\begin{table*}[ht]
+\caption{\textbf{Season 2019/2020 (before Covid-19).}}
+\centering
+\begin{tabular}{p{0.25\linewidth}p{0.25\linewidth}p{0.25\linewidth}}
+\hline
+period & round  & days\\
+\hline
+1 & 14  & 22th, 23th, 24th of November\\
+2 & 20 & 24th, 25th, 26th of January\\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[ht]
+\caption{\textbf{Season 2020/2021 (during Covid-19).}}
+\centering
+\begin{tabular}{p{0.25\linewidth}p{0.25\linewidth}p{0.25\linewidth}}
+\hline
+period & round  & days\\
+\hline
+1 & 10  & 27th, 28th, 29th of November\\
+2 & 18 & 22th, 23th, 24th of January\\
+\hline
+\end{tabular}
+\end{table*}
+
+These specific weekends were selected because they have a the same amount of games with a similar degree of hypothesized ‘buzz’. With buzz we refer to the degree of rivalry between the soccer clubs and degree of exciting results. 
+
+The entities or instances that are scraped are tweets and the different variables that the tweets contain. The tweets can be from: private individuals, organizations and the soccer teams. For the analysis the variables date, content, unique id and usernames are needed. Next to this, the variables URL, reply count, retweet count, like count, location, user followers count, user friends count and tweet source were scraped. The data is available through a CSV file. 
+
+The variable content contains all the content in a specific tweet. The variable unique id contains the unique id every object in Twitter gets assigned. The variable username contains the username of the person that posted the tweet. The variable location displays the town or place the user has as location on its profile. This does not have to be the same as the actual location of the user; the user is free to adapt this. The variable source reveals where tweets are posted from (e.g. Android). For the variables the reply count, retweet count, like count, user followers count, user friends count the count of each object is included. 
+
+\section{Analysis}
+First the data has been prepared and cleaned for analysis. In the plot below one can find an overview of the amount of tweets per hashtag per period. As visualized in the plot, Feyenoord and PSV are especially popular on Twitter during the selected timeframe as they are mentioned the most.
+
+\begin{figure}[H]
+\caption{\textbf{Count of words used in tweets for words occurring at least 150 times pre-corona or post-corona}}
+%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{plot_wordcount_sum.pdf}
-\input{gen/paper/output/table1.tex} %dit ga ik waarschijnlijk niet gebruiken want de path van de graphics definen lijkt me makkelijker.
+
+\end{figure}
+For the sentiment analysis, a new dataset was created that counts the amount of words that contain the emotions: anger, anticipation, disgust, fear, joy, sadness, surprise and trust. Next to the emotions, tweets were evaluated on negativity and positivity. The count per variable per period is displayed in the graph below. 
+
+\begin{figure}[H]
+\caption{\textbf{Emotions in tweets divided into pre- and post-corona tweets.}}
+%\includegraphics[]{figure1.png} %was used initially to test the code
+\includegraphics[]{plot_emotions_sum.pdf}
+
+\end{figure}
+To see whether there are significant difference in sentiment pre- and post-corona, several independent sample T-tests were performed. In the table below, one can find an overview of the summary statistics per emotion and on negativity and positivity. Next to this, the outcomes of the independent sample T-test are displayed.  
+ 
+\begin{figure}[H]
+\caption{\textbf{T tests of of emotions for pre- and post-corona tweets.}}
+%\includegraphics[]{figure1.png} %was used initially to test the code
+%\includegraphics[]{???.pdf}
+
+\end{figure}
+As already evident in the table, there are significant effects detected for several variables. An interesting observation is that there are more negative words in the tweets during corona than before corona. Next to this, less positivity was detected in tweets during games in Covid-19 times. 
+
+\begin{figure}[H]
+\caption{\textbf{Emotions in tweets divided into pre- and post-corona tweets.}}
+%\includegraphics[]{figure1.png} %was used initially to test the code
+\includegraphics[]{plot_posneg_sum.pdf}
+
+\end{figure}
+
+
+\nocite{*}
+\bibliography{ref.bib}
+
+
 \end{document}

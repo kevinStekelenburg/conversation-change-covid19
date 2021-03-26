@@ -4,7 +4,7 @@
 
 # ------------ WARNING ----------------
 
-print("WARNING: Scraper does not work with python versions below 3.8.5!"")
+print("WARNING: Scraper does not work with python versions below 3.8.5!")
 
 # Scraper does not work with python versions below 3.8.5!
 # Please download te latest version of python before using this scraper and put the scraper into the Path of your computer
@@ -84,7 +84,7 @@ def get_twitterdata(filename,
                     path,
                     season,
                     period,
-                    maxTweets = 100,
+                    maxTweets = 10000,
                     searchq = ['#afcajax'],
                     since = '2021-01-01', until='2021-01-03'):
 
@@ -114,95 +114,104 @@ eredivisie_clubs='#AdoDenHaag OR #AFCAjax OR #AZalkmaar OR #FCEmmen OR #FCGronin
 data_path="../../oDCM/data/",
 
 # Now scraping tweets for Eredivisie Hashtags, Season X and Period X
+
 # Season 19/20, period 1
-get_twitterdata(filename= 'season19-20period1max100.csv',
+get_twitterdata(filename= 'season19-20period1.csv',
                 path= "../../oDCM/data/",
                 searchq= eredivisie_clubs,
                 since = '2019-11-22',
                 until = '2019-11-24',
                 season= 'season19/20',
-                period= 'period1')
+                period= 'period1'#,Uncomment next line to test scraper for only 100 tweets!
+                #maxTweets = 100
+               )
 
 sleep(5)
 
 # Season 19/20, period 2
-get_twitterdata(filename= 'season19-20period2max100.csv',
+get_twitterdata(filename= 'season19-20period2.csv',
                 path= "../../oDCM/data/",
                 searchq= eredivisie_clubs,
                 since = '2020-01-24',
                 until = '2020-01-26',
                 season= 'season19/20',
-                period= 'period2')
+                period= 'period2'#,Uncomment next line to test scraper for only 100 tweets!
+                #maxTweets = 100
+               )
 
 sleep(5)
 
 # Season 20/21, period 1
-get_twitterdata(filename= 'season20-21period1max100.csv',
+get_twitterdata(filename= 'season20-21period1.csv',
                 path= "../../oDCM/data/",
                 searchq= eredivisie_clubs,
                 since = '2020-11-27',
                 until = '2020-11-29',
                 season= 'season20/21',
-                period= 'period1')
+                period= 'period1'#,Uncomment next line to test scraper for only 100 tweets!
+                #maxTweets = 100
+               )
 
 sleep(5)
 
 # Season 20/21, period 2
-get_twitterdata(filename= 'season20-21period2max100.csv',
+get_twitterdata(filename= 'season20-21period2.csv',
                 path= "../../oDCM/data/",
                 searchq= eredivisie_clubs,
                 since = '2021-01-22',
                 until = '2021-01-24',
                 season= 'season20/21',
-                period= 'period2')
+                period= 'period2'#,Uncomment next line to test scraper for only 100 tweets!
+                #maxTweets = 100
+               )
 
-print("all done! :)")
+print("All done! :)")
 
 
 # Now merging and exporting local
 
-Find_All_CSVs = ['season19-20period1max100.csv',
-                 'season19-20period2max100.csv',
-                 'season20-21period1max100.csv',
-                 'season20-21period2max100.csv']
+Find_All_CSVs = ['../../oDCM/data/season19-20period1.csv',
+                 '../../oDCM/data/season19-20period2.csv',
+                 '../../oDCM/data/season20-21period1.csv',
+                 '../../oDCM/data/season20-21period2.csv']
 
-#combining all files in the list
+# Combine all rows of CSV-files in the list above to one 'merged_tweets_eredivisie.csv' file.
 
 combined_csv = pd.concat([pd.read_csv(f,header=0) for f in Find_All_CSVs])
 
 combined_csv.head()
 
-combined_csv.to_csv("..\..\oDCM\data\merged_tweets_eredivisiemax100.csv", quotechar='"',
-          quoting=csv.QUOTE_ALL, index=False, encoding='utf-8')
+combined_csv.to_csv("../../oDCM/data/merged_tweets_eredivisie.csv", quotechar='"', quoting=csv.QUOTE_ALL, index=False, encoding='utf-8')
 
-print("all done merging! twitter data available in your directory")
+print("All done! Twitter data available in your directory")
 
+# ### Now exporting to Dropbox (optional)
 
-# Now exporting to Dropbox
+# #### Uncomment full code below (select all, use shortcut *ctr* + */* or *cmd* + */*) and add own Dropbox-token to directly upload scraped dataset to own dropbox folder.
 
-#class TransferData:
-#    def __init__(self, access_token):
-#        self.access_token = access_token
+# class TransferData:
+#     def __init__(self, access_token):
+#         self.access_token = access_token
 
-#    def upload_file(self, file_from, file_to):
-#        """upload a file to Dropbox using API v2
-#        """
-#        dbx = dropbox.Dropbox(self.access_token)
+#     def upload_file(self, file_from, file_to):
+#         """upload a file to Dropbox using API v2
+#         """
+#         dbx = dropbox.Dropbox(self.access_token)
 
-#        with open(file_from, 'rb') as f:
-#            dbx.files_upload(f.read(), file_to)
+#         with open(file_from, 'rb') as f:
+#             dbx.files_upload(f.read(), file_to)
 
-#def main():
-#    access_token = 'v-mXjquqVYUAAAAAAAAAASK_JKxBrPRCHBuXOIP4_Nb7dTKnklglKe0JQU2hH6WC'
-#    transferData = TransferData(access_token)
+# def main():
+#     access_token = 'Dropbox-Token'
+#     transferData = TransferData(access_token)
 
-#    file_from = 'merged_tweets_eredivisie.csv'
-#    file_to = '/Apps/dPrep/merged_tweets_eredivisie.csv'  # The full dropbox path to upload the file to, including the file name
+#     file_from = 'merged_tweets_eredivisie.csv'
+#     file_to = '/Apps/dPrep/merged_tweets_eredivisie.csv'  # The full path to upload the file to, including the file name
 
-    # API v2
-#    transferData.upload_file(file_from, file_to)
+#     # API v2
+#     transferData.upload_file(file_from, file_to)
 
-#if __name__ == '__main__':
-#    main()
-
-#print("All done, check out the dropbox folder: ")
+# if __name__ == '__main__':
+#     main()
+    
+# print("All done, check out the dropbox folder: ")

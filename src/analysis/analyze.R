@@ -295,7 +295,7 @@ bxp_positive <- bxp_positive +
 
 # OUTPUT ----
 # Saving plots and outputs
-print("Saving plots in pdf-file...")
+print("Saving plots in .RData-file")
 save(plot_wordcount, plot_emotions, plot_posneg, t_tests, 
      descriptives, bxp_anger, bxp_anticipation, bxp_disgust, bxp_fear, bxp_joy, bxp_sadness,
      bxp_surprise, bxp_trust, bxp_negative, bxp_positive,

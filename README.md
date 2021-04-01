@@ -86,11 +86,10 @@ __Dependencies__
 - R 
 - Python
 - Gnu make 
-- TeX distribution (lualatex)
-- For the `makefile` to work, R, Gnu make and the TeX distribution (specifically `pdflatex`) need to be made available in the system path 
+- TeX distribution (LuaTeX)
+- For the `makefile` to work, R, Gnu make and the TeX distribution (specifically `LuaTeX`) need to be made available in the system path 
 - Detailed installation instructions can be found here: [tilburgsciencehub.com](http://tilburgsciencehub.com/)
 
-_Explain to potential users how to run/replicate your workflow. Touch upon, if necessary, the required input data, which (secret) credentials are required (and how to obtain them), which software tools are needed to run the workflow (including links to the installation instructions), and how to run the workflow. Make use of subheaders where appropriate._
 
 ## More resources
 __Related documentation__ 

@@ -8,7 +8,6 @@ all: data_cleaned data_merged results paper
 data_cleaned: gen/data-preparation/output/tdm_pre.csv gen/data-preparation/output/tdm_post.csv gen/data-preparation/output/scores_pre.RData gen/data-preparation/output/scores_post.RData
 data_merged: gen/data-preparation/output/merged_sentiment.csv
 results: gen/analysis/output/analysis_results.RData
-#pdfs: gen/paper/output/boxplot_anger.pdf #gen/paper/output/boxplot_anticipation.pdf gen/paper/output/boxplot_disgust.pdf gen/paper/output/boxplot_fear.pdf gen/paper/output/boxplot_joy.pdf gen/paper/output/boxplot_negative.pdf gen/paper/output/boxplot_positive.pdf gen/paper/output/boxplot_sadness.pdf gen/paper/output/boxplot_surprise.pdf gen/paper/output/boxplot_trust.pdf gen/paper/output/plot_emotions_sum.pdf gen/paper/output/plot_posneg_sum.pdf gen/paper/output/plot_wordcount_sum.pdf
 paper: gen/paper/output/paper.pdf
 .PHONY: clean # RUN make clean TO DELETE ALL UNNECESSARY FILES AFTER RUNNING make
 

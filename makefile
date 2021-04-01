@@ -10,20 +10,20 @@ data_merged: gen/data-preparation/output/merged_sentiment.csv
 results: gen/analysis/output/analysis_results.RData
 #pdfs: gen/paper/output/boxplot_anger.pdf #gen/paper/output/boxplot_anticipation.pdf gen/paper/output/boxplot_disgust.pdf gen/paper/output/boxplot_fear.pdf gen/paper/output/boxplot_joy.pdf gen/paper/output/boxplot_negative.pdf gen/paper/output/boxplot_positive.pdf gen/paper/output/boxplot_sadness.pdf gen/paper/output/boxplot_surprise.pdf gen/paper/output/boxplot_trust.pdf gen/paper/output/plot_emotions_sum.pdf gen/paper/output/plot_posneg_sum.pdf gen/paper/output/plot_wordcount_sum.pdf
 paper: gen/paper/output/paper.pdf
-.PHONY: clean
+.PHONY: clean # RUN make clean TO DELETE ALL UNNECESSARY FILES AFTER RUNNING make
 
 # INDIVIDUAL RECIPES
 
 # Generate paper/text
 gen/paper/output/paper.pdf: gen/analysis/output/boxplot_anger.pdf gen/analysis/output/boxplot_anticipation.pdf gen/analysis/output/boxplot_disgust.pdf gen/analysis/output/boxplot_fear.pdf gen/analysis/output/boxplot_joy.pdf gen/analysis/output/boxplot_negative.pdf gen/analysis/output/boxplot_positive.pdf gen/analysis/output/boxplot_sadness.pdf gen/analysis/output/boxplot_surprise.pdf gen/analysis/output/boxplot_trust.pdf gen/analysis/output/plot_emotions_sum.pdf gen/analysis/output/plot_posneg_sum.pdf gen/analysis/output/plot_wordcount_sum.pdf \
 				src/paper/paper.tex
-	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex'
-	pdflatex -interaction=batchmode -output-directory='gen/paper/output/' 'src/paper/paper.tex'
-	pdflatex -output-directory='gen/paper/output/' 'src/paper/paper.tex'
-# Note: runs pdflatex multiple times to have correct cross-references
+	lualatex -output-directory="gen/paper/output/" "src/paper/paper.tex"
+	bibtex gen/paper/output/paper
+	lualatex -output-directory="gen/paper/output/" "src/paper/paper.tex"
+# Note: runs lualatex multiple times to have correct cross-references
 
 # Generate PDF's
-gen/paper/output/boxplot_anger.pdf gen/paper/output/boxplot_anticipation.pdf gen/paper/output/boxplot_disgust.pdf gen/paper/output/boxplot_fear.pdf gen/paper/output/boxplot_joy.pdf gen/paper/output/boxplot_negative.pdf gen/paper/output/boxplot_positive.pdf gen/paper/output/boxplot_sadness.pdf gen/paper/output/boxplot_surprise.pdf gen/paper/output/boxplot_trust.pdf gen/paper/output/plot_emotions_sum.pdf gen/paper/output/plot_posneg_sum.pdf gen/paper/output/plot_wordcount_sum.pdf: gen/analysis/output/analysis_results.RData \
+gen/analysis/output/boxplot_anger.pdf gen/analysis/output/boxplot_anticipation.pdf gen/analysis/output/boxplot_disgust.pdf gen/analysis/output/boxplot_fear.pdf gen/analysis/output/boxplot_joy.pdf gen/analysis/output/boxplot_negative.pdf gen/analysis/output/boxplot_positive.pdf gen/analysis/output/boxplot_sadness.pdf gen/analysis/output/boxplot_surprise.pdf gen/analysis/output/boxplot_trust.pdf gen/analysis/output/plot_emotions_sum.pdf gen/analysis/output/plot_posneg_sum.pdf gen/analysis/output/plot_wordcount_sum.pdf: gen/analysis/output/analysis_results.RData \
 					src/paper/pdf.R 
 	Rscript src/paper/pdf.R
 

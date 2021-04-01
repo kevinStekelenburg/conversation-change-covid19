@@ -17,6 +17,68 @@
 \bibliographystyle{apalike}
 \usepackage{import}
 \usepackage{graphicx}
+\usepackage{filecontents}
+\begin{filecontents}{ref.bib}
+    @article{ahu61,
+   author={Arrow, Kenneth J. and Leonid Hurwicz and Hirofumi Uzawa},
+   title={Constraint qualifications in maximization problems},
+   journal={Naval Research Logistics Quarterly},
+   volume={8},
+   year=1961,
+   pages={175-191}
+}
+
+@article{grix2020impact,
+  title={The impact of Covid-19 on sport},
+  author={Grix, Jonathan and Brannagan, Paul Michael and Grimes, Holly and Neville, Ross},
+  journal={International Journal of Sport Policy and Politics},
+  pages={1--12},
+  year={2020},
+  publisher={Taylor \& Francis}
+}
+
+@article{lechner2007imagined,
+  title={Imagined communities in the global game: Soccer and the development of Dutch national identity},
+  author={Lechner, Frank J},
+  journal={Global networks},
+  volume={7},
+  number={2},
+  pages={215--229},
+  year={2007},
+  publisher={Wiley Online Library}
+}
+
+@article{boen2002behavioral,
+  title={Behavioral consequences of fluctuating group success: An Internet study of soccer-team fans},
+  author={Boen, Filip and Vanbeselaere, Norbert and Feys, Jos},
+  journal={The Journal of social psychology},
+  volume={142},
+  number={6},
+  pages={769--781},
+  year={2002},
+  publisher={Taylor \& Francis}
+}
+
+@article{kassing2010fan,
+  title={Fan--athlete interaction and Twitter tweeting through the Giro: A case study},
+  author={Kassing, Jeffrey W and Sanderson, Jimmy},
+  journal={International journal of sport communication},
+  volume={3},
+  number={1},
+  pages={113--128},
+  year={2010},
+  publisher={Human Kinetics, Inc.}
+}
+
+@article{johnes2008we,
+  title={We Hate England! We Hate England? National Identity and Anti-Englishness in Welsh Soccer Fan Culture},
+  author={Johnes, Martin},
+  journal={Soccer Review},
+  year={2008}
+}
+\end{filecontents}
+%\usepackage{biblatex}
+%\addbibresource{ref.bib}
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -31,7 +93,7 @@
 \titlespacing*{\subsection}
    {0pt}{-.1\baselineskip}{-.1\baselineskip}
 
-\graphicspath{{../../gen/analysis/output/}}
+\graphicspath{{gen/analysis/output/}}
 
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
@@ -113,9 +175,9 @@ The variable content contains all the content in a specific tweet. The variable 
 \section{Analysis}
 First the data has been prepared and cleaned for analysis. In the plot below one can find an overview of the amount of tweets per hashtag per period. As visualized in the plot, Feyenoord and PSV are especially popular on Twitter during the selected timeframe as they are mentioned the most.
 
+
 \begin{figure}[H]
 \caption{\textbf{Count of words used in tweets for words occurring at least 150 times pre-corona or post-corona}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{plot_wordcount_sum.pdf}
 
 \end{figure}
@@ -123,78 +185,68 @@ For the sentiment analysis, a new dataset was created that counts the amount of 
 
 \begin{figure}[H]
 \caption{\textbf{Emotions in tweets divided into pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{plot_emotions_sum.pdf}
 
 \end{figure}
 To see whether there are significant difference in sentiment pre- and post-corona, several independent sample T-tests were performed. In the table below, one can find an overview of the summary statistics per emotion and on negativity and positivity. Next to this, the outcomes of the independent sample T-test are displayed.
 
+
 \begin{figure}[H]
 \caption{\textbf{T test of anger for pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{boxplot_anger.pdf}
 
 \end{figure}
 
 \begin{figure}[H]
 \caption{\textbf{T test of anticipation for pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
-\includegraphics[]{anticipation.pdf}
+\includegraphics[]{boxplot_anticipation.pdf}
 
 \end{figure}
 
 \begin{figure}[H]
 \caption{\textbf{T test of disgust for pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{boxplot_disgust.pdf}
 
 \end{figure}
 
 \begin{figure}[H]
 \caption{\textbf{T test of fear for pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{boxplot_fear.pdf}
 
 \end{figure}
 
 \begin{figure}[H]
 \caption{\textbf{T test of joy for pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{boxplot_joy.pdf}
 
 \end{figure}
 
 \begin{figure}[H]
 \caption{\textbf{T test of negative emotions for pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{boxplot_negative.pdf}
 
 \end{figure}
 
 \begin{figure}[H]
 \caption{\textbf{T test of positive emotions for pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{boxplot_positive.pdf}
 
 \end{figure}
 
 \begin{figure}[H]
 \caption{\textbf{T test of sadness for pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{boxplot_sadness.pdf}
 
 \end{figure}
 
 \begin{figure}[H]
 \caption{\textbf{T test of surprise for pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{boxplot_surprise.pdf}
 
 \end{figure}
 
 \begin{figure}[H]
 \caption{\textbf{T test of trust for pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{boxplot_trust.pdf}
 
 \end{figure}
@@ -202,14 +254,12 @@ As already evident in the table, there are significant effects detected for seve
 
 \begin{figure}[H]
 \caption{\textbf{Emotions in tweets divided into pre- and post-corona tweets.}}
-%\includegraphics[]{figure1.png} %was used initially to test the code
 \includegraphics[]{plot_posneg_sum.pdf}
 
 \end{figure}
 
-
 \nocite{*}
-\bibliography{ref.bib}
+\bibliography{gen/paper/output/ref}
 
 
 \end{document}

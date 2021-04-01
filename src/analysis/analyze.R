@@ -300,5 +300,3 @@ save(plot_wordcount, plot_emotions, plot_posneg, t_tests,
      descriptives, bxp_anger, bxp_anticipation, bxp_disgust, bxp_fear, bxp_joy, bxp_sadness,
      bxp_surprise, bxp_trust, bxp_negative, bxp_positive,
      file = here("gen", "analysis", "output", "analysis_results.RData"))
-
-print("Done saving plots in pdf!")

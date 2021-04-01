@@ -62,6 +62,8 @@ The count per emotion per period is displayed in the graph below.
 ![image](https://user-images.githubusercontent.com/79858036/112387040-c11f6800-8cf1-11eb-8a28-0b5b3929ae16.png)
  
 To see whether there are significant difference in sentiment pre and post corona, several independent sample T-tests were performed. In the table below, one can find an overview of the summary statistics per emotion and on negativity and positivity. Next to this, the outcomes of the independent sample T-test are displayed. 
+
+![image](https://user-images.githubusercontent.com/79858036/113286168-1fe57280-92ec-11eb-9708-7400c91397ce.png)
   
 As already evident in the table, there are significant effects detected for several variables. An interesting observation is that there are more negative words in the tweets during corona than before corona. Next to this, less positivity was detected in tweets during games in Covid-19 times. 
  
@@ -86,7 +88,7 @@ __Dependencies__
 - R 
 - Python
 - Gnu make 
-- TeX distribution (pdflatex)
+- TeX distribution (lualatex)
 - For the `makefile` to work, R, Gnu make and the TeX distribution (specifically `pdflatex`) need to be made available in the system path 
 - Detailed installation instructions can be found here: [tilburgsciencehub.com](http://tilburgsciencehub.com/)
 

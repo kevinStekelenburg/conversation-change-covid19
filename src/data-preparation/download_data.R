@@ -20,7 +20,6 @@ dir.create(here("gen", "analysis", "temp"))
 dir.create(here("gen", "data-preparation", "input"))
 dir.create(here("gen", "data-preparation", "output"))
 dir.create(here("gen", "data-preparation", "temp"))
-dir.create(here("gen", "paper", "input"))
 dir.create(here("gen", "paper", "output"))
 dir.create(here("gen", "paper", "temp"))
 

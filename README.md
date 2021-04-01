@@ -7,7 +7,7 @@ The Covid-19 pandemic has changed the world tremendously. The Netherlands has ex
 
 __This research:__
 
-* Takes Twitter as the social media platform for data collection. On this platform there is a lot of soccer fan interaction both between fans and with the teams. Other social media platforms such as Facebook or Instagram are more focused on sharing content whereas twitter is for interacting with one another and giving opinions (Kassing, J. W., & Sanderson, 2010). Twitter also provides several tools for additional interaction because the tweets can be ‘retweeted’ and Tweeters can directly reply on Tweets of other Tweeters. ‘Retweeting’ entails sharing the Tweet someone else created with your own network. 
+* Takes Twitter as the social media platform for data collection. On this platform there is a lot of soccer fan interaction both between fans and with the teams. Other social media platforms such as Facebook or Instagram are more focused on sharing content whereas twitter is for interacting with one another and giving opinions (Kassing & Sanderson, 2010). Twitter also provides several tools for additional interaction because the tweets can be ‘retweeted’ and Tweeters can directly reply on Tweets of other Tweeters. ‘Retweeting’ entails sharing the Tweet someone else created with your own network. 
 
 * Has the following research question: To what extent did the twitter conversation of Dutch Football fans change due to COVID-19 (no fans in the stadiums)?
 
@@ -73,7 +73,7 @@ As already evident in the table, there are significant effects detected for seve
 
 There are three folders, named "data", "src" and "Odcm". Next to this, a .gitignore file, a README.md file (which you are reading now) and a makefile are included. 
 
-The Odcm folder contains the scraper for collecting the data. Within this file, the data from each weekend that was scraped and then combined into one csv file. This folder also contains a documentation file which gives more background information about the data. 
+The odcm folder contains the scraper for collecting the data. Within this file, the data from each weekend that was scraped and then combined into one csv file. This folder also contains a documentation file which gives more background information about the data. 
  
  In the src folder,  the data is downloaded, prepared for analysis and merged in the data preparation file. For the analysis  a new dataset was created that counts the amount of words that contain the sentiments of interest. After this is done several Indenpendent sample T-tests have been done and data visualization plots have been included.  
  
